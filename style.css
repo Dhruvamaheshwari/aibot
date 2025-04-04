@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poopins", serif;
+    scrollbar-width: none;
 }
 
 :root {
@@ -37,6 +38,7 @@ body {
     /* display: flex; */
     /* justify-content: center; */
     padding: 20px;
+    scrollbar-width: none;
 }
 
 [data-theme="dark"] {
