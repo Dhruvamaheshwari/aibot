@@ -1,0 +1,316 @@
+/**
+ * Import Google Font - Poopins
+ *
+ * @format
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poopins", serif;
+}
+
+:root {
+    /* Light Theme */
+    --text-color: #0e0f11;
+    --subheading-color: #97a7ca;
+    --placeholder-color: #030b18;
+    --primary-color:  linear-gradient(to right, #f4e6f1, #f3a0d7,#b3e8f7);;
+    --secondary-color: #f0f2f5;
+    --secondary-hover-color: #e4e6eb;
+    --accent-color: #1d7efd;
+    --accent-hover: #1c6bb0;
+    --gradient: linear-gradient(to right, #1d7efd, #8f6fff);
+    --bot-avatar-bg: #e3f2fd;
+    --user-bubble: #1d7efd;
+    --user-text: white;
+    --border-radius: 12px;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--primary-color);
+    min-height: 100vh;
+    /* display: flex; */
+    /* justify-content: center; */
+    padding: 20px;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --text-color: #f5f5f5;
+    --subheading-color: #97a7ca;
+    --placeholder-color: #c3cdde;
+    --primary-color: linear-gradient(to right, #0e1c26, #2a454b,#294861);
+    --secondary-color: #2d2d2d;
+    --secondary-hover-color: #3d3d3d;
+    --accent-color: #1d7efd;
+    --accent-hover: #1c6bb0;
+    --gradient: linear-gradient(to right, #295270, #524175);
+    --bot-avatar-bg: #333e58;
+    --user-bubble: #1d7efd;
+    --user-text: white;
+}
+
+
+.constainer {
+    overflow-y: auto;
+    padding: 32px 0 60px;
+    max-height: calc(100vh - 127px);
+    scrollbar-color: var(--scrollbar-color) transparent;
+}
+
+.constainer:where(.app, .suggestion, .pormt-wrapper, .disclaimer-text,.message) {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+    max-width: 980px;
+    
+}
+
+/* App heading styling */
+.constainer .app {
+    margin-top: 4vb;
+}
+
+.app .heading {
+    font-size: 3rem;
+    width: fit-content;
+    background: linear-gradient(to right, #1d7efd, #8f6fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app .sub-heading {
+    font-size: 2.6rem;
+    margin-top: -5px;
+    color: var(--secondary-color);
+}
+
+
+/* suggestions list stylings */
+.constainer .suggestion {
+    display: flex;
+    gap: 15px;
+    margin-top: 9.5vh;
+    list-style: none;
+    overflow-x: auto;
+}
+
+.constainer :is(.app, .suggestion) {
+    display: none;
+}
+
+.suggestion .suggestion-list {
+    width: 228px;
+    padding: 18px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 12px;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    transform-origin: 0.3s ease;
+    scrollbar-width: none;
+}
+
+.suggestion .suggestion-list:hover {
+    background: var(--secondary-hover-color);
+}
+
+.suggestion .suggestion-list .text {
+    font-size: 1.1rem;
+}
+
+.suggestion .suggestion-list span {
+    height: 45px;
+    width: 45px;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(95, 95, 194);
+    align-self: flex-end;
+    background: var(--primary-color);
+}
+
+.suggestion .suggestion-list:nth-child(2) span {
+    color: green;
+}
+
+.suggestion .suggestion-list:nth-child(3) span {
+    color: yellow;
+}
+
+.suggestion .suggestion-list:nth-child(4) span {
+    color: blueviolet;
+}
+
+/* chat content style */
+
+.constainer .chats-container{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.chats-container .message{
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.chats-container .bot-message .avatar{
+    height: 43px;
+    width: 43px; 
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    flex-shrink: 0;
+    padding: 6px;
+    margin-right: -7px;
+    align-self: flex-start;
+    
+}
+
+.chats-container .bot-message.loading .avatar{
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.chats-container .message .message-text{
+    padding: 30px 16px;
+    word-wrap:break-word;
+    white-space: pre-line;
+}
+
+.chats-container .bot-message{
+    margin: 20px 20px;
+}
+
+.chats-container .user-message{
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.chats-container .user-message  .message-text{
+padding: 12px 16px;
+max-width: 70%;
+border-radius: 13px 13px 3px 13px;
+background: var(--secondary-color);
+
+}
+/* promt  container styling*/
+.poromt-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    background: var(--primary-color);
+}
+
+.poromt-container :where(.pormt-wrapper, .promt-form, .prompt-actions) {
+    display: flex;
+    gap: 12px;
+    height: 56px;
+    align-items: center;
+}
+
+.pormt-wrapper .promt-form {
+    width: 100%;
+    height: 100%;
+    border-radius: 130px;
+    background: var(--secondary-color);
+}
+
+.promt-form .promt-input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding-left: 24px;
+    color: var(--text-color);
+}
+
+.promt-form .promt-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.pormt-wrapper button {
+    width: 56px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    background: var(--secondary-color);
+    transition: 0.3s ease;
+}
+
+.pormt-wrapper button:hover {
+    background: var(--secondary-hover-color);
+}
+
+.promt-form .prompt-actions {
+    margin-right: 7px;
+    gap: 5px;
+}
+
+.promt-form .prompt-actions button {
+    height: 45px;
+    width: 45px;
+}
+
+.promt-form #send-prompt-btn:hover {
+    color: #ffff;
+    background: #1d7efd;
+}
+
+.promt-form #send-prompt-btn {
+    color: #ffff;
+    display: none;
+    background: #1c6bb0;
+}
+
+.promt-form .promt-input:valid~.prompt-actions #send-prompt-btn {
+    display: block;
+}
+
+.poromt-container .disclaimer-text {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 16px 20px 0;
+    color: var(--placeholder-color);
+}
+
+#theme-toggle-btn, #clear-chat-btn {
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+}

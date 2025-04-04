@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <!-- google font link -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="constainer">
+        <!-- App Header -->
+        <header class="app">
+            <h1 class="heading">Hello, there</h1>
+            <h2 class="sub-heading">How can i help you</h2>
+        </header>
+
+        <!-- Suggestion list -->
+        <ul class="suggestion">
+            <li class="suggestion-list">
+                <p class="text">Desing a home office setop for remote work under $500</p>
+                <span class="material-symbols-rounded">draw</span>
+            </li>
+            <li class="suggestion-list">
+                <p class="text">Desing a home office setop for remote work under $500</p>
+                <span class="material-symbols-rounded">
+                    lightbulb
+                </span>
+            </li>
+            <li class="suggestion-list">
+                <p class="text">Desing a home office setop for remote work under $500</p>
+                <span class="material-symbols-rounded">
+                    explore
+                </span>
+            </li>
+            <li class="suggestion-list">
+                <p class="text">Desing a home office setop for remote work under $500</p>
+                <span class="material-symbols-rounded">
+                    integration_instructions
+                </span>
+            </li>
+        </ul>
+
+
+        <!--  chat conatainer-->
+        <div class="chats-container">
+            <div class="message user-message">
+                <!-- <p class="message-text"></p> -->
+            </div>
+
+            
+            <div class="message bot-message">
+                <!-- <img class="avatar" src="./images/img1.svg" alt="no"> -->
+                <!-- <p class="message-text"></p> -->
+            </div>
+        </div>
+        <!--Promt Container  -->
+        <div class="poromt-container">
+            <div class="pormt-wrapper">
+                <form action="" class="promt-form">
+                    <input type="text" class="promt-input" placeholder="Ask any question" required>
+                    <div class="prompt-actions">
+                        <button id="add-file-btn" class="material-symbols-rounded">attach_file_add</button>
+                        <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+                    </div>
+                </form>
+
+                <button id="theme-toggle-btn" class="material-symbols-rounded">backlight_high</button>
+                <button class="material-symbols-rounded" id="clear-chat-btn">delete</button>
+            </div>
+
+            <p class="disclaimer-text" style="font-size:x-large;">StyleBot creted by LPU team [Upendra, Ayan Dhruva Maheshwari] </p>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
